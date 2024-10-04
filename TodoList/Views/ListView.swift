@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     
-    @EnvironmentObject var listViewModel: ListViewModel
+    @Environment(ListViewModel.self) var listViewModel: ListViewModel
     
 //    @State var items: [ItemModel] = [
 //        ItemModel(title: "This is the first title!", isCompleted: false),
@@ -70,6 +70,6 @@ struct ListView: View {
         // Ensure the preview is inside the NavigationStack
         ListView()
     }
-    .environmentObject(ListViewModel())
+    .environment(ListViewModel())
 }
 
