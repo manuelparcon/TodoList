@@ -19,9 +19,9 @@ import SwiftUI
  */
 
 
-class ListViewModel: ObservableObject {
+@Observable class ListViewModel {
     
-    @Published var items: [ItemModel] = [] {
+    var items: [ItemModel] = [] {
         // didSet is called everytime we change the items array
         didSet {
             // Instead of adding saveItems to functions like getItems() or addItems(), we can just add it using didSet
