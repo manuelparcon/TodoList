@@ -18,7 +18,7 @@ import SwiftUI
 @main
 struct TodoListApp: App {
     
-    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    @State var listViewModel: ListViewModel = ListViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -27,7 +27,7 @@ struct TodoListApp: App {
                 ListView()
             }
             // Passing the listViewModel as an environment object using .environmentObject so the entire NavigationStack has access to it, instead of just to the ListView()
-            .environmentObject(listViewModel)
+            .environment(listViewModel)
         }
     }
 }

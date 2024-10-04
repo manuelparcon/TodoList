@@ -11,7 +11,7 @@ struct AddView: View {
     
     @Environment(\.dismiss) var dismiss
 //    @Environment(\.isPresented) var isPresented
-    @EnvironmentObject var listViewModel: ListViewModel
+    @Environment(ListViewModel.self) var listViewModel: ListViewModel
     @State var textFieldText: String = ""
     
     @State var alertTitle: String = ""
@@ -68,5 +68,5 @@ struct AddView: View {
     NavigationStack {
         AddView()
     }
-    .environmentObject(ListViewModel())
+    .environment(ListViewModel())
 }
